@@ -1,11 +1,14 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
 import Contact from "./components/Contact";
+import TabUser from "./components/TabUser";
 
 function App() {
   return (
     <div className="App">
-      <Contact />
+      {TabUser.map((user) => {
+        return <Contact key={user.id} user={user} />;
+      })}
     </div>
   );
 }
